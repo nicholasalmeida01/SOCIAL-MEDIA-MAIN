@@ -1,0 +1,526 @@
+
+.site-fisio{
+  --ink:#10202C;
+  --ink-deep:#0A1620;
+  --paper:#EFF1EE;
+  --paper-dim:#E4E7E2;
+  --steel:#5C7080;
+  --titanium:#B7C4C9;
+  --amber:#D98B3F;
+  --amber-deep:#B96F2A;
+  --dot-blue:#3B6EA5;
+  --line:rgba(16,32,44,0.14);
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'IBM Plex Sans', sans-serif;
+  line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  min-height:100vh;
+  display:block;
+}
+.site-fisio *{box-sizing:border-box; margin:0; padding:0;}
+  .site-fisio h1,.site-fisio h2,.site-fisio h3{
+    font-family:'Space Grotesk', sans-serif;
+    letter-spacing:-0.02em;
+    font-weight:600;
+    color:var(--ink-deep);
+  }
+  .site-fisio .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--amber-deep);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .site-fisio .eyebrow::before{
+    content:"";
+    width:18px; height:1px;
+    background:var(--amber);
+    display:inline-block;
+  }
+  .site-fisio .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+  .site-fisio a{color:inherit; text-decoration:none;}
+  .site-fisio img{display:block; max-width:100%;}
+
+  /* NAV */
+  .site-fisio .nav-inner{
+    max-width:1180px; margin:0 auto; padding:18px 40px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .site-fisio .logo{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700; font-size:1.05rem;
+    letter-spacing:-0.01em;
+  }
+  .site-fisio .logo span{color:var(--amber-deep);}
+  .site-fisio .nav-links{
+    display:flex; gap:34px;
+    font-size:0.88rem; font-weight:500;
+  }
+  .site-fisio .nav-links a{
+    position:relative;
+    color:var(--steel);
+    transition:color .2s;
+  }
+  .site-fisio .nav-links a:hover{color:var(--ink-deep);}
+  .site-fisio .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:-4px;
+    width:0; height:1px; background:var(--amber);
+    transition:width .25s;
+  }
+  .site-fisio .nav-links a:hover::after{width:100%;}
+  .site-fisio .nav-cta{
+    font-size:0.85rem; font-weight:600;
+    background:var(--ink-deep); color:var(--paper);
+    padding:10px 20px; border-radius:2px;
+    transition:background .2s;
+  }
+  .site-fisio .nav-cta:hover{background:var(--amber-deep);}
+
+  /* TOP NAV */
+  .site-fisio .topnav{
+    position:fixed; top:0; left:0; right:0; z-index:50;
+    background:rgba(239,241,238,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .site-fisio .topnav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 40px;
+  }
+  .site-fisio .topnav-links{display:flex; gap:34px; font-size:0.88rem; font-weight:500;}
+  .site-fisio .topnav-links a{
+    position:relative; color:var(--steel); transition:color .2s;
+  }
+  .site-fisio .topnav-links a:hover{color:var(--ink-deep);}
+  .site-fisio .topnav-links a::after{
+    content:""; position:absolute; left:0; bottom:-4px;
+    width:0; height:1px; background:var(--amber);
+    transition:width .25s;
+  }
+  .site-fisio .topnav-links a:hover::after{width:100%;}
+  .site-fisio .btn-sm{padding:10px 20px; font-size:0.85rem;}
+  @media (max-width:860px){ .site-fisio .topnav-links{display:none;} }
+
+  /* HERO */
+  .site-fisio .hero{
+    padding:168px 0 90px;
+    position:relative;
+  }
+  .site-fisio .hero-split{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:70px;
+    align-items:center;
+  }
+  .site-fisio .hero h1{
+    font-size:clamp(2.6rem, 5vw, 4rem);
+    line-height:1.04;
+    margin:20px 0 10px;
+  }
+  .site-fisio .hero-subtitle{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:1.3rem;
+    color:var(--amber-deep);
+    margin-bottom:20px;
+  }
+  .site-fisio .hero p.lead{
+    font-size:1.05rem;
+    color:var(--steel);
+    max-width:46ch;
+    margin-bottom:34px;
+  }
+  .site-fisio .cta-row{display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
+  .site-fisio .btn-pill{
+    border:1px solid var(--line);
+    border-radius:30px;
+    display:inline-flex; align-items:center; gap:8px;
+    font-size:0.9rem; font-weight:600; color:var(--ink-deep);
+    padding:13px 22px 13px 18px;
+    transition:border-color .2s, transform .2s;
+  }
+  .site-fisio .btn-pill:hover{border-color:var(--ink-deep); transform:translateY(-2px);}
+  .site-fisio .icon-btn{
+    width:46px; height:46px; border-radius:50%;
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+    color:var(--ink-deep);
+    transition:border-color .2s, color .2s, transform .2s;
+  }
+  .site-fisio .icon-btn:hover{border-color:var(--amber-deep); color:var(--amber-deep); transform:translateY(-2px);}
+
+  .site-fisio .hero-photo-card{
+    position:relative;
+    padding:0 22px 22px 0;
+  }
+  .site-fisio .hero-photo-card::before{
+    content:"";
+    position:absolute;
+    inset:22px 0 0 22px;
+    border:1.5px solid var(--amber);
+    border-radius:8px;
+    z-index:0;
+  }
+  .site-fisio .hero-photo{
+    position:relative; z-index:1;
+    aspect-ratio:4/5;
+    border-radius:8px; overflow:hidden;
+    background:linear-gradient(160deg,#1B3648,#0A1620);
+  }
+  .site-fisio .hero-photo img{width:100%; height:100%; object-fit:cover; display:block;}
+
+  @media (max-width:860px){
+    .site-fisio .hero-split{grid-template-columns:1fr;}
+    .site-fisio .hero-photo-card{max-width:360px; margin:0 auto;}
+  }
+  .site-fisio .btn{
+    font-size:0.92rem; font-weight:600;
+    padding:14px 26px;
+    border-radius:2px;
+    display:inline-flex; align-items:center; gap:8px;
+    transition:transform .2s, background .2s, color .2s;
+  }
+  .site-fisio .btn-primary{background:var(--ink-deep); color:var(--paper);}
+  .site-fisio .btn-primary:hover{background:var(--amber-deep); transform:translateY(-2px);}
+  .site-fisio .btn-ghost{border:1px solid var(--line); color:var(--ink-deep);}
+  .site-fisio .btn-ghost:hover{border-color:var(--ink-deep); transform:translateY(-2px);}
+
+  .site-fisio .hero-photo{
+    position:relative;
+    aspect-ratio:4/5;
+    background:linear-gradient(160deg,#1B3648,#0A1620);
+    border-radius:4px;
+    overflow:hidden;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .site-fisio .hero-photo .placeholder-tag{
+    color:rgba(239,241,238,0.55);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    text-align:center;
+    padding:20px;
+    border:1px dashed rgba(239,241,238,0.3);
+  }
+
+  /* STRIDE DIVIDER */
+  .site-fisio .stride{
+    position:relative;
+    height:100px;
+    overflow:hidden;
+    display:flex; align-items:center;
+    -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+    mask-image:linear-gradient(90deg, transparent 0%, #000 10%, #000 90%, transparent 100%);
+  }
+  .site-fisio .stride-track{
+    display:flex;
+    width:200%;
+    animation:strideScroll 9s linear infinite;
+    animation-play-state:paused;
+  }
+  .site-fisio .stride.in-view .stride-track{animation-play-state:running;}
+  .site-fisio .stride-track svg{width:50%; height:80px; flex-shrink:0; display:block; overflow:visible;}
+  .site-fisio .stride-track path{
+    fill:none;
+    stroke:var(--amber);
+    stroke-width:2;
+    stroke-linecap:round;
+  }
+  .site-fisio .stride-track .dot{
+    fill:var(--dot-blue);
+  }
+  @keyframes strideScroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  .site-fisio .stride-word{
+    position:absolute; left:50%; top:50%;
+    transform:translate(-50%,-50%) scale(0.6);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem; font-weight:500;
+    letter-spacing:0.16em;
+    color:var(--ink-deep);
+    background:var(--paper);
+    padding:6px 16px;
+    border:1px solid var(--line);
+    border-radius:20px;
+    opacity:0;
+    transition:opacity .3s ease, transform .3s cubic-bezier(.34,1.56,.64,1);
+    white-space:nowrap;
+    z-index:2;
+  }
+  .site-fisio .stride-word.show{opacity:1; transform:translate(-50%,-50%) scale(1);}
+  @media (prefers-reduced-motion: reduce){
+    .site-fisio .stride-track{animation:none; animation-play-state:paused;}
+  }
+
+  /* ABOUT STRIP */
+  .site-fisio .about{
+    background:var(--ink-deep);
+    color:var(--paper);
+    padding:70px 0;
+  }
+  .site-fisio .about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:start;
+  }
+  .site-fisio .about h2{color:var(--paper); font-size:1.7rem; margin:16px 0 18px;}
+  .site-fisio .about p{color:rgba(239,241,238,0.72); max-width:48ch; font-size:0.98rem;}
+  .site-fisio .pillar-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:28px;
+  }
+  .site-fisio .pillar-item{
+    display:flex; flex-direction:column; align-items:flex-start;
+    padding-top:20px; border-top:1px solid rgba(239,241,238,0.14);
+  }
+  .site-fisio .pillar-svg{width:38px; height:38px; margin-bottom:16px;}
+  .site-fisio .pillar-img{
+    width:38px; height:auto; margin-bottom:16px; object-fit:contain;
+    align-self:flex-start;
+  }
+  .site-fisio .pillar-img--heart{width:34px;}
+  .site-fisio .pillar-item b{
+    display:block; font-family:'Space Grotesk',sans-serif;
+    font-size:0.95rem; color:var(--paper); margin-bottom:8px; line-height:1.3;
+  }
+  .site-fisio .pillar-item span{
+    font-size:0.84rem; color:rgba(239,241,238,0.6); line-height:1.45;
+  }
+  @media (max-width:960px){
+    .site-fisio .pillar-grid{grid-template-columns:repeat(2,1fr);}
+  }
+  @media (max-width:560px){
+    .site-fisio .pillar-grid{grid-template-columns:1fr;}
+  }
+
+  /* SPECIALTY */
+  .site-fisio .specialty{padding:100px 0;}
+  .site-fisio .specialty-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:70px;
+    align-items:center;
+  }
+  .site-fisio .specialty h2{font-size:2.1rem; margin:16px 0 20px; max-width:14ch;}
+  .site-fisio .specialty p.lead{color:var(--steel); max-width:44ch; margin-bottom:36px;}
+  .site-fisio .pillars{display:grid; gap:22px;}
+  .site-fisio .pillar{
+    display:grid; grid-template-columns:44px 1fr; gap:18px;
+    padding:22px 0; border-top:1px solid var(--line);
+  }
+  .site-fisio .pillar:last-child{border-bottom:1px solid var(--line);}
+  .site-fisio .pillar-num{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--amber-deep); font-size:0.85rem; padding-top:2px;
+  }
+  .site-fisio .pillar h3{font-size:1.05rem; margin-bottom:6px;}
+  .site-fisio .pillar p{color:var(--steel); font-size:0.92rem;}
+  .site-fisio .gait-visual{
+    aspect-ratio:1/1;
+    background:var(--paper-dim);
+    border:1px solid var(--line);
+    border-radius:4px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .site-fisio .gait-visual svg{width:70%;}
+
+  .site-fisio .areas-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px;
+  }
+  .site-fisio .area-card{
+    display:block;
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:28px 26px;
+    transition:transform .2s, border-color .2s;
+  }
+  .site-fisio .area-card h3{font-size:1.1rem; margin-bottom:10px;}
+  .site-fisio .area-card p{color:var(--steel); font-size:0.9rem;}
+  .site-fisio .area-card:hover{transform:translateY(-3px); border-color:var(--amber);}
+  .site-fisio .area-card-featured{
+    background:var(--ink-deep); border-color:var(--ink-deep);
+  }
+  .site-fisio .area-card-featured h3{color:var(--paper);}
+  .site-fisio .area-card-featured p{color:rgba(239,241,238,0.7);}
+  .site-fisio .area-link{
+    display:inline-block; margin-top:16px;
+    font-size:0.85rem; font-weight:600; color:var(--amber);
+  }
+
+  /* BLOG */
+  .site-fisio .blog{padding:100px 0; background:var(--paper-dim);}
+  .site-fisio .section-head{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:46px; gap:20px; flex-wrap:wrap;
+  }
+  .site-fisio .section-head h2{font-size:2rem; margin-top:16px;}
+  .site-fisio .section-head a{
+    font-size:0.85rem; font-weight:600; color:var(--amber-deep);
+    border-bottom:1px solid var(--amber-deep); padding-bottom:2px;
+  }
+  .site-fisio .blog-carousel{
+    display:flex;
+    gap:24px;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    padding:6px 40px 26px;
+    scrollbar-width:none;
+  }
+  .site-fisio .blog-carousel::-webkit-scrollbar{display:none;}
+  .site-fisio .article{
+    flex:0 0 320px;
+    scroll-snap-align:start;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:4px;
+    overflow:hidden;
+    transition:transform .25s, box-shadow .25s;
+  }
+  .site-fisio .article:hover{transform:translateY(-4px); box-shadow:0 14px 30px rgba(16,32,44,0.08);}
+  .site-fisio .article-media{
+    aspect-ratio:16/10;
+    background:linear-gradient(135deg,#DCE1DC,#C9D1CC);
+  }
+  .site-fisio .article-body{padding:22px;}
+  .site-fisio .article .tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em;
+    color:var(--amber-deep); margin-bottom:10px; display:block;
+  }
+  .site-fisio .article h3{font-size:1.05rem; line-height:1.3; margin-bottom:8px;}
+  .site-fisio .article p{font-size:0.88rem; color:var(--steel);}
+  .site-fisio .swipe-hint{
+    display:none;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.7rem; letter-spacing:0.06em;
+    color:var(--steel); text-transform:uppercase;
+  }
+  @media (max-width:860px){
+    .site-fisio .swipe-hint{display:inline-block;}
+    .site-fisio .blog-carousel{padding:6px 20px 22px;}
+    .site-fisio .article{flex-basis:82vw;}
+  }
+
+  /* PACKAGES */
+  .site-fisio .packages{padding:100px 0;}
+  .site-fisio .pkg-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:26px;
+  }
+  .site-fisio .pkg{
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:32px 26px;
+    transition:border-color .2s, transform .2s;
+  }
+  .site-fisio .pkg:hover{border-color:var(--amber); transform:translateY(-3px);}
+  .site-fisio .pkg.featured{
+    background:var(--ink-deep); color:var(--paper); border-color:var(--ink-deep);
+  }
+  .site-fisio .pkg.featured h3, .site-fisio .pkg.featured .price{color:var(--paper);}
+  .site-fisio .pkg.featured ul li{color:rgba(239,241,238,0.75);}
+  .site-fisio .pkg h3{font-size:1.15rem; margin-bottom:8px;}
+  .site-fisio .pkg .price{
+    font-family:'Space Grotesk',sans-serif; font-size:1.5rem; margin-bottom:18px;
+  }
+  .site-fisio .pkg .price small{font-family:'IBM Plex Sans'; font-size:0.8rem; font-weight:400; color:var(--steel);}
+  .site-fisio .pkg ul{list-style:none; margin-bottom:26px;}
+  .site-fisio .pkg ul li{
+    font-size:0.88rem; color:var(--steel);
+    padding:8px 0; border-top:1px solid var(--line);
+  }
+  .site-fisio .pkg.featured ul li{border-top-color:rgba(239,241,238,0.15);}
+  .site-fisio .pkg .btn{width:100%; justify-content:center;}
+
+  /* INSTAGRAM */
+  .site-fisio .insta{padding:90px 0; background:var(--paper-dim);}
+  .site-fisio .insta-profile{
+    display:flex; align-items:center; gap:32px;
+    margin-top:20px; margin-bottom:40px;
+  }
+  .site-fisio .insta-avatar{
+    width:96px; height:96px; border-radius:50%;
+    object-fit:cover; flex-shrink:0;
+    border:3px solid var(--paper);
+    box-shadow:0 0 0 1px var(--line);
+  }
+  .site-fisio .insta-profile-info{flex:1;}
+  .site-fisio .insta-handle-row{
+    display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+    margin-bottom:14px;
+  }
+  .site-fisio .insta-handle-row h2{font-size:1.3rem; margin:0;}
+  .site-fisio .insta-follow-btn{
+    font-size:0.85rem; font-weight:600;
+    background:var(--ink-deep); color:var(--paper);
+    padding:8px 20px; border-radius:6px;
+    transition:background .2s;
+  }
+  .site-fisio .insta-follow-btn:hover{background:var(--amber-deep);}
+  .site-fisio .insta-stats{
+    display:flex; gap:26px; margin-bottom:12px; flex-wrap:wrap;
+  }
+  .site-fisio .insta-stats span{font-size:0.9rem; color:var(--steel);}
+  .site-fisio .insta-stats b{color:var(--ink-deep); font-family:'Space Grotesk',sans-serif;}
+  .site-fisio .insta-bio{font-size:0.9rem; color:var(--steel);}
+  .site-fisio .insta-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:4px; max-width:520px;
+  }
+  .site-fisio .insta-tile{
+    aspect-ratio:1/1; background:linear-gradient(150deg,#D7DCD6,#C4CBC4);
+  }
+  .site-fisio .insta-note{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.72rem; color:var(--steel);
+    margin-top:18px;
+  }
+  @media (max-width:640px){
+    .site-fisio .insta-profile{flex-direction:column; align-items:flex-start; gap:18px;}
+  }
+
+  /* FOOTER */
+  .site-fisio footer{
+    background:var(--ink-deep); color:var(--paper);
+    padding:70px 0 34px;
+  }
+  .site-fisio .footer-grid{
+    display:grid; grid-template-columns:1.2fr 0.6fr 0.6fr; gap:40px;
+    padding-bottom:50px; border-bottom:1px solid rgba(239,241,238,0.12);
+  }
+  .site-fisio footer h3{color:var(--paper); font-size:1.4rem; margin-bottom:14px;}
+  .site-fisio footer p{color:rgba(239,241,238,0.6); font-size:0.92rem; max-width:36ch;}
+  .site-fisio footer .col-title{
+    font-family:'IBM Plex Mono', monospace; font-size:0.7rem;
+    text-transform:uppercase; letter-spacing:0.08em; color:rgba(239,241,238,0.5);
+    margin-bottom:14px;
+  }
+  .site-fisio footer ul{list-style:none;}
+  .site-fisio footer ul li{margin-bottom:10px; font-size:0.92rem;}
+  .site-fisio footer ul a{color:rgba(239,241,238,0.85); transition:color .2s;}
+  .site-fisio footer ul a:hover{color:var(--amber);}
+  .site-fisio .foot-bottom{
+    display:flex; justify-content:space-between; padding-top:26px;
+    font-size:0.78rem; color:rgba(239,241,238,0.4); flex-wrap:wrap; gap:10px;
+  }
+
+  @media (max-width:860px){
+    .site-fisio .nav-links{display:none;}
+    .site-fisio .about-grid, .site-fisio .specialty-grid{grid-template-columns:1fr;}
+    .site-fisio .hero{padding-top:130px;}
+    .site-fisio .pkg-grid{grid-template-columns:1fr;}
+    .site-fisio .insta-grid{grid-template-columns:repeat(3,1fr);}
+    .site-fisio .footer-grid{grid-template-columns:1fr;}
+  }

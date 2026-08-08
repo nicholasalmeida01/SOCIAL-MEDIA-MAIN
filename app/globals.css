@@ -1,0 +1,29 @@
+/* Reset/estilos verdadeiramente globais, comuns a qualquer seção do site.
+   Cada área (Play to Play, cases) traz suas próprias variáveis e estilos
+   sob um wrapper (.site-ptp / .site-fisio) para não colidir entre si. */
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  max-width: 100vw;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
