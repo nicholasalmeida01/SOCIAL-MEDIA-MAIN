@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import "./play-to-play.css";
 import TopBar from "@/components/site/TopBar";
 import SiteFooter from "@/components/site/SiteFooter";
+import ScrollReveal from "@/components/site/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Play to Play — Produção de Vídeo para Redes Sociais | Uberlândia e Remoto",
@@ -66,6 +67,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
       <div className="bg-scanlines" />
       <div className="bg-vignette" />
 
+      <ScrollReveal />
       <TopBar />
       {children}
       <SiteFooter />
